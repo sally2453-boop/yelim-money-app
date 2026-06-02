@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 가계부</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>내 가계부</h1>
+
+    <div class="summary-card">
+        <div class="summary-title">이번 달 총 지출</div>
+        <div class="summary-amount">
+            <span id="total">0</span>원
+        </div>
+    </div>
+
+    <div class="month-header">
+        <span id="monthText">2026년 6월</span>
+    </div>
+
+    <ul id="expenseList"></ul>
+
+    <button class="floating-btn" onclick="openModal()">
+        +
+    </button>
+
+</div>
+
+<div id="modal" class="modal">
+
+    <div class="modal-content">
+
+        <h2>지출 입력</h2>
+
+        <input type="date" id="date">
+
+        <input type="number"
+               id="amount"
+               placeholder="금액">
+
+        <select id="category">
+            <option>식비</option>
+            <option>교통비</option>
+            <option>쇼핑</option>
+            <option>생활비</option>
+            <option>카페</option>
+            <option>기타</option>
+        </select>
+
+        <input type="text"
+               id="memo"
+               placeholder="메모">
+
+        <button class="save-btn"
+                onclick="addExpense()">
+            저장
+        </button>
+
+        <button class="close-btn"
+                onclick="closeModal()">
+            닫기
+        </button>
+
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
