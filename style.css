@@ -143,3 +143,17 @@ select {
     border-radius: 15px;
     background: #f3f3f3;
 }
+
+.item-right {
+    text-align: right;
+}
+
+.delete-btn {
+    margin-top: 6px;
+    border: none;
+    background: #ffe8ef;
+    color: #ff6f9f;
+    border-radius: 12px;
+    padding: 5px 10px;
+    font-size: 12px;
+}

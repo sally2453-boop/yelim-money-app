@@ -22,19 +22,37 @@ function addExpense() {
     }
 
     expenses.unshift({
+        id: Date.now(),
         date,
         amount,
         category,
         memo
     });
 
-    localStorage.setItem("expenses", JSON.stringify(expenses));
+    saveExpenses();
 
     document.getElementById("amount").value = "";
     document.getElementById("memo").value = "";
 
     closeModal();
     render();
+}
+
+function deleteExpense(id) {
+    const ok = confirm("이 내역을 삭제할까요?");
+
+    if (!ok) {
+        return;
+    }
+
+    expenses = expenses.filter(item => item.id !== id);
+
+    saveExpenses();
+    render();
+}
+
+function saveExpenses() {
+    localStorage.setItem("expenses", JSON.stringify(expenses));
 }
 
 function render() {
@@ -57,8 +75,14 @@ function render() {
                     </div>
                 </div>
 
-                <div class="item-amount">
-                    ${item.amount.toLocaleString()}원
+                <div class="item-right">
+                    <div class="item-amount">
+                        ${item.amount.toLocaleString()}원
+                    </div>
+
+                    <button class="delete-btn" onclick="deleteExpense(${item.id})">
+                        삭제
+                    </button>
                 </div>
             </div>
         `;
