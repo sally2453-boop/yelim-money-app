@@ -157,3 +157,21 @@ select {
     padding: 5px 10px;
     font-size: 12px;
 }
+
+.month-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.month-btn {
+    border: none;
+    background: #ffe8ef;
+    color: #ff6f9f;
+    border-radius: 12px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+}

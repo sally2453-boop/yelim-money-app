@@ -20,8 +20,20 @@
     </div>
 
     <div class="month-header">
-        <span id="monthText">2026년 6월</span>
-    </div>
+
+    <button class="month-btn"
+            onclick="changeMonth(-1)">
+        ◀
+    </button>
+
+    <span id="monthText"></span>
+
+    <button class="month-btn"
+            onclick="changeMonth(1)">
+        ▶
+    </button>
+
+</div>
 
     <ul id="expenseList"></ul>
 
