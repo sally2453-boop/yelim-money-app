@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>내 가계부</title>
-    <link rel="stylesheet" href="style.css?v=20260602">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
-
     <h1>내 가계부</h1>
 
     <div class="summary-card">
@@ -20,40 +19,22 @@
     </div>
 
     <div class="month-header">
-
-    <button class="month-btn"
-            onclick="changeMonth(-1)">
-        ◀
-    </button>
-
-    <span id="monthText"></span>
-
-    <button class="month-btn"
-            onclick="changeMonth(1)">
-        ▶
-    </button>
-
-</div>
+        <span id="monthText">2026년 6월</span>
+    </div>
 
     <ul id="expenseList"></ul>
 
-    <button class="floating-btn" onclick="openModal()">
-        +
-    </button>
-
+    <button class="floating-btn" onclick="openModal()">+</button>
 </div>
 
-<div id="modal" class="modal">
-
+<div id="modal" class="modal" onclick="closeModalByBackground(event)">
     <div class="modal-content">
+        <div class="sheet-bar"></div>
 
         <h2>지출 입력</h2>
 
         <input type="date" id="date">
-
-        <input type="number"
-               id="amount"
-               placeholder="금액">
+        <input type="number" id="amount" placeholder="금액">
 
         <select id="category">
             <option>식비</option>
@@ -64,25 +45,13 @@
             <option>기타</option>
         </select>
 
-        <input type="text"
-               id="memo"
-               placeholder="메모">
+        <input type="text" id="memo" placeholder="메모">
 
-        <button class="save-btn"
-                onclick="addExpense()">
-            저장
-        </button>
-
-        <button class="close-btn"
-                onclick="closeModal()">
-            닫기
-        </button>
-
+        <button class="save-btn" onclick="addExpense()">저장</button>
+        <button class="close-btn" onclick="closeModal()">닫기</button>
     </div>
-
 </div>
 
-<script src="app.js?v=20260602"></script>
-
+<script src="app.js"></script>
 </body>
 </html>
